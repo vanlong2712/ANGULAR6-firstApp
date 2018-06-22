@@ -6,9 +6,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  username = '';
+  username: string = '';
+  isToggleSecret: boolean = false;
+  logs = [];
 
   onResetUsername = () => {
     this.username = '';
+  };
+
+  onToggleSecret = () => {
+    this.isToggleSecret = !this.isToggleSecret;
+    this.logs.push(new Date().getTime());
   };
 }
